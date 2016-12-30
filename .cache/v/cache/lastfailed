@@ -1,0 +1,3 @@
+{
+  "tests/test_scbwrapper.py::test_scb_info": true
+}
