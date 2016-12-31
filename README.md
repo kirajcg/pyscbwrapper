@@ -1,5 +1,5 @@
 # pyscbwrapper
-Version 0.0.1
+Version 0.0.3
 
 Python wrapper for SCB's API, which can be found at http://www.scb.se/api_en. 
 
