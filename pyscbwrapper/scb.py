@@ -1,7 +1,7 @@
 from . import session
 
 class SCB(object):
-    """ Version 0.0.1 """
+    """ Version 0.0.3 """
     def __init__(self, lang, *args):
         self.ids = list(args)
         self.url = 'https://api.scb.se/OV0104/v1/doris/{}/ssd/'.format(lang)
