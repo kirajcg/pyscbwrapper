@@ -18,7 +18,7 @@ scb.go_down('BE') # Navigates to https://api.scb.se/OV0104/v1/doris/en/ssd/BE
 scb.go_up() # Navigates back to https://api.scb.se/OV0104/v1/doris/en/ssd/
 scb.info() # Fetches metadata associated with https://api.scb.se/OV0104/v1/doris/en/ssd/
 scb = SCB('sv', 'BE') # Navigates directly to https://api.scb.se/OV0104/v1/doris/sv/ssd/BE (Data in Swedish)
-scb = SCB('en', 'BE', 'BE0701', 'MedelAlderNY') # Ǹavigates directly to https://api.scb.se/OV0104/v1/doris/en/ssd/BE/BE0701/MedelAlderNY
+scb = SCB('en', 'BE', 'BE0701', 'MedelAlderNY') # Navigates directly to https://api.scb.se/OV0104/v1/doris/en/ssd/BE/BE0701/MedelAlderNY
 scb.get_url() # Returns 'https://api.scb.se/OV0104/v1/doris/en/ssd/BE/BE0701/MedelAlderNY'
 scb.get_data(query) # Fetches data associated with https://api.scb.se/OV0104/v1/doris/en/ssd/BE/BE0701/MedelAlderNY, according to json formatted query (see link above)
 ```
