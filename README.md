@@ -22,3 +22,5 @@ scb = SCB('en', 'BE', 'BE0701', 'MedelAlderNY') # Navigates directly to https://
 scb.get_url() # Returns 'https://api.scb.se/OV0104/v1/doris/en/ssd/BE/BE0701/MedelAlderNY'
 scb.get_data(query) # Fetches data associated with https://api.scb.se/OV0104/v1/doris/en/ssd/BE/BE0701/MedelAlderNY, according to json formatted query (see link above)
 ```
+
+[![Mentioned in Awesome Official Statistics ](https://awesome.re/mentioned-badge.svg)](http://www.awesomeofficialstatistics.org)
