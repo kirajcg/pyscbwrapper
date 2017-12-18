@@ -1,7 +1,8 @@
 # pyscbwrapper
 Version 0.0.3
 
-Python wrapper for SCB's API, which can be found at http://www.scb.se/api_en. 
+Python wrapper for SCB's API, which can be found at http://www.scb.se/en/api.
+
 
 Dependencies: requests>=2.12.4
 
