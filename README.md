@@ -5,7 +5,8 @@ Python wrapper for Statistics Sweden's API, which can be found at http://www.scb
 
 News in version 0.1:  
 Compatible with changes in the API.  
-Includes a function for generating JSON queries from user-supplied input.
+Includes a function for generating JSON queries from user-supplied input.  
+It is now possible to go up and down in the metadata tree more than one step at a time.
 
 Dependencies: requests>=2.12.4
 
