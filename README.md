@@ -2,7 +2,7 @@
 Version 0.0.3
 
 Python wrapper for SCB's API, which can be found at http://www.scb.se/en/api.
-
+Updated version compatible with the changes in the API is coming soon. 
 
 Dependencies: requests>=2.12.4
 
