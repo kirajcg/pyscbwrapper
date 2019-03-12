@@ -8,7 +8,7 @@ Compatible with changes in the API.
 Includes a function for generating JSON queries from user-supplied input.  
 It is now possible to go up and down in the metadata tree more than one step at a time.
 
-Dependencies: requests>=2.12.4
+Dependencies: requests>=2.21.0
 
 To import: 
 ```python
