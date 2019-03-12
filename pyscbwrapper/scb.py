@@ -39,28 +39,39 @@ class SCB(object):
     def get_variables(self):
         """ Returns a formatted list of variables for the bottom node. """
         response = session.get(self.url + '/'.join(self.ids))
-        variables = response.json()['variables']
+        try:
+            variables = response.json()['variables']
+        except TypeError:
+            print("Error: You are not in a leaf node.")
+            return
         for item in variables:
             val = list(item.values())
             for i in range(1, len(val), 2):
                 print(val[i])
 
+    def clear_query(self):
+        self.query = {"query": [], 
+                      "response": {"format": "json"}
+                      }
+
     def set_query(self, **kwargs):
         """ Forms a query from input arguments. """
+        self.clear_query()
         response = session.get(self.url + '/'.join(self.ids))
         variables = response.json()['variables']
-        i = 0
         for kwarg in kwargs:
             for var in variables:
                 if var["text"] == kwarg:
-                    self.query["query"][i] = {
+                    self.query["query"].append({
                             "code": var['code'],
                             "selection": {
                                     "filter": "item",
-                                    "values": [var['values'][i] for i in range(len(var['values'])) if var['valueTexts'][i] in kwargs[kwarg]]
+                                    "values": [var['values'][j] for j in range(len(var['values'])) if var['valueTexts'][j] in kwargs[kwarg]]
                                     }
-                                }
-            i += 1
+                                })
+
+    def get_query(self):
+        return self.query
 
     def get_data(self):
         """ Returns the data from the constructed query. """
