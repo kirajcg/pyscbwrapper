@@ -15,7 +15,6 @@ To import:
 from pyscbwrapper import SCB
 ```
 
-Usage examples coming soon. 
 
 
 

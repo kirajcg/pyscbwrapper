@@ -50,6 +50,7 @@ class SCB(object):
                 print(val[i])
 
     def clear_query(self):
+        """ Clears the query. Mostly an internal function to use in others. """
         self.query = {"query": [], 
                       "response": {"format": "json"}
                       }
@@ -71,6 +72,7 @@ class SCB(object):
                                 })
 
     def get_query(self):
+        """ Returns the current query. """
         return self.query
 
     def get_data(self):
