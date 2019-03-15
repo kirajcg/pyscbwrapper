@@ -2,8 +2,8 @@ from . import session
 import json
 
 class SCB(object):
-    """ Version 0.1 """
-    def __init__(self, lang="sv", *args):
+    """ Version 0.1.1 """
+    def __init__(self, lang, *args):
         self.ids = list(args)
         self.url = 'https://api.scb.se/OV0104/v1/doris/{}/ssd/'.format(lang)
         self.url_out = 'http://www.statistikdatabasen.scb.se/pxweb/{}/ssd/START__'.format(lang)
@@ -17,15 +17,12 @@ class SCB(object):
         return response.json()
 
     def go_down(self, *args):
-        """ Goes one level deeper in the hierarchical metadata structure. """
+        """ Goes deeper in the hierarchical metadata structure. """
         self.ids += list(args)
 
-    def go_up(self, *args):
-        """ Goes one level up in the hierarchical metadata structure. """
-        if len(args) > 0:
-            self.ids = self.ids[:-args[0]]
-        else:
-            self.ids = self.ids[:-1]
+    def go_up(self, k=1):
+        """ Goes k levels up in the hierarchical metadata structure. """
+        self.ids = self.ids[:-k]
 
     def get_url(self):
         """ Returns the url to the current folder. """
@@ -37,17 +34,20 @@ class SCB(object):
         return self.url_out + '__'.join(self.ids)
 
     def get_variables(self):
-        """ Returns a formatted list of variables for the bottom node. """
-        response = session.get(self.url + '/'.join(self.ids))
+        """ Returns a dictionary of variables and their ranges for the bottom node. """
+        response = self.info()
+        val_dict = {}
         try:
-            variables = response.json()['variables']
+            variables = response['variables']
         except TypeError:
             print("Error: You are not in a leaf node.")
             return
         for item in variables:
             val = list(item.values())
-            for i in range(1, len(val), 2):
-                print(val[i])
+            for i in range(1, len(val), 4):
+                for j in range(3, len(val), 4):
+                    val_dict[val[i]] = val[j]
+        return val_dict
 
     def clear_query(self):
         """ Clears the query. Mostly an internal function to use in others. """
@@ -58,16 +58,19 @@ class SCB(object):
     def set_query(self, **kwargs):
         """ Forms a query from input arguments. """
         self.clear_query()
-        response = session.get(self.url + '/'.join(self.ids))
-        variables = response.json()['variables']
+        response = self.info()
+        variables = response['variables']
         for kwarg in kwargs:
             for var in variables:
-                if var["text"] == kwarg:
+                if var["text"].replace(' ' , '') == kwarg:
                     self.query["query"].append({
                             "code": var['code'],
                             "selection": {
                                     "filter": "item",
-                                    "values": [var['values'][j] for j in range(len(var['values'])) if var['valueTexts'][j] in kwargs[kwarg]]
+                                    "values": [var['values'][j] for j in \
+                                               range(len(var['values'])) if \
+                                               var['valueTexts'][j] in \
+                                               kwargs[kwarg]]
                                     }
                                 })
 
