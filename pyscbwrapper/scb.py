@@ -3,7 +3,7 @@ import json
 
 class SCB(object):
     """ Version 0.1 """
-    def __init__(self, lang, *args):
+    def __init__(self, lang="sv", *args):
         self.ids = list(args)
         self.url = 'https://api.scb.se/OV0104/v1/doris/{}/ssd/'.format(lang)
         self.url_out = 'http://www.statistikdatabasen.scb.se/pxweb/{}/ssd/START__'.format(lang)
