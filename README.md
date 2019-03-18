@@ -19,10 +19,7 @@ To import:
 from pyscbwrapper import SCB
 ```
 
-For info on usage: 
-```python
-help(SCB)
-```
+For info on usage, see the included notebooks. 
 
 
 
