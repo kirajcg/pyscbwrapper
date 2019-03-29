@@ -14,6 +14,11 @@ New functionality: get_variables() returns a dict instead of only writing to the
 
 Dependencies: requests>=2.21.0
 
+To install: 
+```python
+pip install pyscbwrapper
+```
+
 To import: 
 ```python
 from pyscbwrapper import SCB
