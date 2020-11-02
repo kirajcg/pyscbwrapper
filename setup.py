@@ -15,8 +15,8 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/kirajcg/pyscbwrapper',
-    author='',
-    author_email='',
+    author='Kira Coder Gylling',
+    author_email='kira.gylling@gmail.com',
     license='MIT',
     classifiers=[
         "License :: OSI Approved :: MIT License",
