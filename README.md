@@ -24,7 +24,7 @@ To import:
 from pyscbwrapper import SCB
 ```
 
-For info on usage, see the included notebooks. 
+For info on usage, see the included notebooks. For detailed usage examples, see the subfolder fetch-deso-data-examples.
 
 
 
