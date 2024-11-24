@@ -12,6 +12,10 @@ News in version 0.1.1:
 Bugfixes: Variables with space in their names can now be accessed by removing the spaces.  
 New functionality: get_variables() returns a dict instead of only writing to the terminal.  
 
+News in version 0.1.2:
+Security fix: Updated API URL from HTTP to HTTPS to ensure secure communication with Statistics Sweden's API. 
+This resolves issues with empty or invalid responses caused by using the insecure HTTP connection.
+
 Dependencies: requests>=2.21.0
 
 To install: 
