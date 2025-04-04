@@ -10,8 +10,8 @@ with open(this_dir / "README.md", encoding="utf-8") as f:
 
 setup(
     name='pyscbwrapper',
-    version='0.1.1',
-    description="Python wrapper for Statistics Sweden's API, which can be found at http://www.scb.se/en/api.",
+    version='0.1.2',
+    description="Python wrapper for Statistics Sweden's API, which can be found at https://www.scb.se/en/api.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/kirajcg/pyscbwrapper',
