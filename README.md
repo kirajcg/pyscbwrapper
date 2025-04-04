@@ -1,7 +1,7 @@
 # pyscbwrapper
 Version 0.1.1
 
-Python wrapper for Statistics Sweden's API, which can be found at http://www.scb.se/en/api.
+Python wrapper for Statistics Sweden's API, which can be found at https://www.scb.se/en/api.
 
 News in version 0.1:  
 Compatible with changes in the API.  
